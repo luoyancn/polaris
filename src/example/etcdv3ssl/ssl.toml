@@ -1,0 +1,8 @@
+[etcd]
+endpoints = ["https://192.168.139.6:2379", "https://192.168.139.7:2379", "https://192.168.139.8:2379"]
+use_tls = true
+ca_cert = "ca.pem"
+ca_file = "kubernetes.pem"
+key_file = "kubernetes-key.pem"
+connection_timeout = 5
+ttl = 10

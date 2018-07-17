@@ -1,0 +1,4 @@
+[etcd]
+endpoints = ["https://192.168.139.6:6789", "https://192.168.139.7:6789", "https://192.168.139.8:6789"]
+connection_timeout = 20
+

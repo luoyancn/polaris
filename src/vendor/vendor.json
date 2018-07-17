@@ -63,6 +63,18 @@
 			"revisionTime": "2018-07-11T13:59:41Z"
 		},
 		{
+			"checksumSHA1": "pMYklrF1LTZhUgj05MEvA7q4T48=",
+			"path": "github.com/coreos/etcd/pkg/tlsutil",
+			"revision": "688043a7c2ac8bbb0e73ca5694c7815275865e24",
+			"revisionTime": "2018-07-11T13:59:41Z"
+		},
+		{
+			"checksumSHA1": "Z6WQYpDJfTfucS3I9G/emwg/dNc=",
+			"path": "github.com/coreos/etcd/pkg/transport",
+			"revision": "688043a7c2ac8bbb0e73ca5694c7815275865e24",
+			"revisionTime": "2018-07-11T13:59:41Z"
+		},
+		{
 			"checksumSHA1": "KU44RoTf7eoYTiIJcPuP70wFNrk=",
 			"path": "github.com/coreos/etcd/pkg/types",
 			"revision": "688043a7c2ac8bbb0e73ca5694c7815275865e24",
