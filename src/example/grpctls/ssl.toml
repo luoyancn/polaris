@@ -1,0 +1,5 @@
+[grpc]
+port = 8080
+use_tls = true
+ca_file  = "kubernetes.pem"
+key_file = "kubernetes-key.pem"
