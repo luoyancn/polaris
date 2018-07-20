@@ -1,0 +1,16 @@
+[grpc]
+port = 8081
+use_tls = false
+ca_file  = "kubernetes.pem"
+key_file = "kubernetes-key.pem"
+lb_mode = true
+registered_address = ["192.168.137.30"]
+
+[etcd]
+endpoints = ["http://localhost:2379"]
+use_tls = false
+ca_cert = "ca.pem"
+ca_file = "kubernetes.pem"
+key_file = "kubernetes-key.pem"
+connection_timeout = 5
+ttl = 10

@@ -13,13 +13,12 @@ import (
 )
 
 func main() {
-	logging.GetLogger("test", logging.STD_ENABLED, "", true)
 	grpcfg := config.NewGrpConf()
 	common.ReadConfig(
 		"ssl.toml", "test", logging.STD_ENABLED, "", true, true, grpcfg)
 	ctx, cancle := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancle()
-	grpclib.InitGrpcClientPool("127.0.0.1:8080")
+	grpclib.InitGrpcClientPool("127.0.0.1:8080", nil)
 	conn := grpclib.Get()
 	defer grpclib.Put(conn)
 	client := msg.NewMessagesClient(conn)

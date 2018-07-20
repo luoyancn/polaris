@@ -9,13 +9,12 @@ import (
 )
 
 func main() {
-	logging.GetLogger("test", logging.STD_ENABLED, "", true)
 	grpcfg := config.NewGrpConf()
 	common.ReadConfig(
 		"ssl.toml", "test", logging.STD_ENABLED, "", true, true, grpcfg)
 	go grpclib.StartServer(
 		config.GRPC_PORT, &msg.Service{HostName: "zhangjl",
-			ListenPort: config.GRPC_PORT},
+			ListenPort: config.GRPC_PORT}, nil, nil,
 		msg.Messages_serviceDesc)
 	common.Wait(grpclib.StopServer)
 }

@@ -10,7 +10,7 @@ import (
 func main() {
 	logging.GetLogger("test", logging.STD_ENABLED, "", true)
 	go grpclib.StartServer(
-		8080, &msg.Service{HostName: "zhangjl", ListenPort: 8080},
+		8080, &msg.Service{HostName: "zhangjl", ListenPort: 8080}, nil, nil,
 		msg.Messages_serviceDesc)
 	common.Wait(grpclib.StopServer)
 }
