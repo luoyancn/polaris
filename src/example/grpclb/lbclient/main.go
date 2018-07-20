@@ -5,6 +5,7 @@ import (
 	"time"
 
 	"github.com/luoyancn/dubhe/common"
+	"github.com/luoyancn/dubhe/fake/mail"
 	"github.com/luoyancn/dubhe/fake/msg"
 	"github.com/luoyancn/dubhe/grpclib"
 	"github.com/luoyancn/dubhe/grpclib/config"
@@ -35,5 +36,14 @@ func main() {
 	//time.Sleep(5 * time.Microsecond)
 	logging.LOG.Infof("The response of grpc server is %s\n", resp.GetResp())
 	//}
+
+	mail_receiver := mail.NewMailClient(conn)
+	reply, err := mail_receiver.Call(ctx, &mail.Sender{Content: "hello"})
+	if nil != err {
+		logging.LOG.Errorf(
+			"Failed to get response from grpc server:%v\n", err)
+		return
+	}
+	logging.LOG.Infof("The response of grpc server is %s\n", reply.GetReply())
 
 }
