@@ -5,6 +5,7 @@ ca_file  = "kubernetes.pem"
 key_file = "kubernetes-key.pem"
 lb_mode = true
 registered_address = ["192.168.137.30"]
+debug = false
 
 [etcd]
 endpoints = ["http://localhost:2379"]

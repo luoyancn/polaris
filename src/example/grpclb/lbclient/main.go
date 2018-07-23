@@ -24,7 +24,6 @@ func main() {
 	conn := grpclib.Get()
 	defer grpclib.Put(conn)
 	client := msg.NewMessagesClient(conn)
-	//for {
 	ctx, cancle := context.WithTimeout(context.Background(), 5*time.Second)
 	defer cancle()
 	resp, err := client.Call(ctx, &msg.Request{Req: "luoyan"})
@@ -33,9 +32,8 @@ func main() {
 			"Failed to get response from grpc server:%v\n", err)
 		return
 	}
-	//time.Sleep(5 * time.Microsecond)
+	time.Sleep(5 * time.Microsecond)
 	logging.LOG.Infof("The response of grpc server is %s\n", resp.GetResp())
-	//}
 
 	mail_receiver := mail.NewMailClient(conn)
 	reply, err := mail_receiver.Call(ctx, &mail.Sender{Content: "hello"})
@@ -45,5 +43,4 @@ func main() {
 		return
 	}
 	logging.LOG.Infof("The response of grpc server is %s\n", reply.GetReply())
-
 }
