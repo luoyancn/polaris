@@ -2,6 +2,7 @@ package main
 
 import (
 	"context"
+	"fmt"
 	"time"
 
 	"github.com/luoyancn/dubhe/common"
@@ -17,10 +18,11 @@ import (
 func main() {
 	grpcfg := config.NewGrpConf()
 	etcdcfg := etcdconfig.NewEtcdConf()
-	common.ReadConfig(
-		"ssl.toml", "test", logging.STD_ENABLED,
+	common.ReadConfig("ssl.toml", "test", logging.STD_ENABLED,
 		"", true, true, grpcfg, etcdcfg)
-	grpclib.InitGrpcClientPool("", etcdv3.NewResolver)
+	grpclib.InitGrpcClientPool(
+		fmt.Sprintf("%s:%d", config.GRPC_INIT_ADDR, config.GRPC_PORT),
+		etcdv3.NewResolver)
 	conn := grpclib.Get()
 	defer grpclib.Put(conn)
 	client := msg.NewMessagesClient(conn)
@@ -33,7 +35,8 @@ func main() {
 		return
 	}
 	time.Sleep(5 * time.Microsecond)
-	logging.LOG.Infof("The response of grpc server is %s\n", resp.GetResp())
+	logging.LOG.Infof(
+		"The response of grpc server is %s\n", resp.GetResp())
 
 	mail_receiver := mail.NewMailClient(conn)
 	reply, err := mail_receiver.Call(ctx, &mail.Sender{Content: "hello"})
@@ -42,5 +45,6 @@ func main() {
 			"Failed to get response from grpc server:%v\n", err)
 		return
 	}
-	logging.LOG.Infof("The response of grpc server is %s\n", reply.GetReply())
+	logging.LOG.Infof(
+		"The response of grpc server is %s\n", reply.GetReply())
 }
