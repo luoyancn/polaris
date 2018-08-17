@@ -22,7 +22,7 @@ func main() {
 		"", true, true, grpcfg, etcdcfg)
 	grpclib.InitGrpcClientPool(
 		fmt.Sprintf("%s:%d", config.GRPC_INIT_ADDR, config.GRPC_PORT),
-		etcdv3.NewResolver)
+		etcdconfig.ETCD_SERVICE_NAME, etcdv3.NewResolver)
 	conn := grpclib.Get()
 	defer grpclib.Put(conn)
 	client := msg.NewMessagesClient(conn)
