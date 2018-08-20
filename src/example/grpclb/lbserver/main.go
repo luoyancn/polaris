@@ -2,13 +2,13 @@ package main
 
 import (
 	"github.com/luoyancn/dubhe/common"
-	"github.com/luoyancn/dubhe/fake/mail"
-	"github.com/luoyancn/dubhe/fake/msg"
 	"github.com/luoyancn/dubhe/grpclib"
 	grpconfig "github.com/luoyancn/dubhe/grpclib/config"
 	"github.com/luoyancn/dubhe/logging"
 	"github.com/luoyancn/dubhe/registry/etcdv3"
 	etcdconfig "github.com/luoyancn/dubhe/registry/etcdv3/config"
+	"github.com/luoyancn/fake/mail"
+	"github.com/luoyancn/fake/msg"
 )
 
 func main() {
