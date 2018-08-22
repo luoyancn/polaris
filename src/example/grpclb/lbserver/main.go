@@ -1,6 +1,8 @@
 package main
 
 import (
+	"os"
+
 	"github.com/luoyancn/dubhe/common"
 	"github.com/luoyancn/dubhe/grpclib"
 	grpconfig "github.com/luoyancn/dubhe/grpclib/config"
@@ -18,14 +20,13 @@ func main() {
 	common.ReadConfig("ssl.toml", "test", logging.STD_ENABLED,
 		"", true, true, grpcfg, etcdcfg)
 	entity := grpclib.NewServiceDescKV(
-		&msg.Service{HostName: "luoyan", ListenPort: grpconfig.GRPC_PORT},
+		&msg.Service{HostName: os.Getenv("HOSTNAME"), ListenPort: grpconfig.GRPC_PORT},
 		msg.Messages_serviceDesc)
 	mail_entity := grpclib.NewServiceDescKV(
-		&mail.Email{HostName: "zhangjl", ListenPort: grpconfig.GRPC_PORT},
+		&mail.Email{HostName: os.Getenv("HOSTNAME"), ListenPort: grpconfig.GRPC_PORT},
 		mail.Mail_serviceDesc)
 	go grpclib.StartServer(
-		grpconfig.GRPC_PORT,
-		etcdv3.Register, etcdv3.UnRegister,
-		entity, mail_entity)
+		grpconfig.GRPC_PORT, etcdv3.Register, etcdv3.UnRegister,
+		etcdconfig.ETCD_SERVICE_NAME, entity, mail_entity)
 	common.Wait(grpclib.StopServer)
 }
