@@ -1,0 +1,17 @@
+http://192.168.137.30/rhev/docker-engine-1.12.6-1.el7.centos.x86_64.rpm
+http://192.168.137.30/rhev/docker-engine-selinux-1.12.6-1.el7.centos.noarch.rpm
+http://192.168.137.30/rhev/qemu-img-ev-2.6.0-29.el7.centos_3.6.1.x86_64.rpm
+http://192.168.137.30/rhev/qemu-img-rhev-2.9.0-16.el7.centos.13.x86_64.rpm
+http://192.168.137.30/rhev/qemu-img-rhev-2.9.0-16.el7.centos.14.x86_64.rpm
+http://192.168.137.30/rhev/qemu-kvm-common-ev-2.6.0-29.el7.centos_3.6.1.x86_64.rpm
+http://192.168.137.30/rhev/qemu-kvm-common-rhev-2.9.0-16.el7.centos.13.x86_64.rpm
+http://192.168.137.30/rhev/qemu-kvm-common-rhev-2.9.0-16.el7.centos.14.x86_64.rpm
+http://192.168.137.30/rhev/qemu-kvm-ev-2.6.0-29.el7.centos_3.6.1.x86_64.rpm
+http://192.168.137.30/rhev/qemu-kvm-ev-debuginfo-2.6.0-29.el7.centos_3.6.1.x86_64.rpm
+http://192.168.137.30/rhev/qemu-kvm-rhev-2.9.0-16.el7.centos.13.x86_64.rpm
+http://192.168.137.30/rhev/qemu-kvm-rhev-2.9.0-16.el7.centos.14.x86_64.rpm
+http://192.168.137.30/rhev/qemu-kvm-rhev-debuginfo-2.9.0-16.el7.centos.13.x86_64.rpm
+http://192.168.137.30/rhev/qemu-kvm-rhev-debuginfo-2.9.0-16.el7.centos.14.x86_64.rpm
+http://192.168.137.30/rhev/qemu-kvm-tools-ev-2.6.0-29.el7.centos_3.6.1.x86_64.rpm
+http://192.168.137.30/rhev/qemu-kvm-tools-rhev-2.9.0-16.el7.centos.13.x86_64.rpm
+http://192.168.137.30/rhev/qemu-kvm-tools-rhev-2.9.0-16.el7.centos.14.x86_64.rpm

@@ -1,3 +1,6 @@
 [submodule "src/github.com/luoyancn/dubhe"]
 	path = src/github.com/luoyancn/dubhe
 	url = git@github.com:luoyancn/dubhe.git
+[submodule "src/github.com/luoyancn/merak"]
+	path = src/github.com/luoyancn/merak
+	url = git@github.com:luoyancn/merak.git
