@@ -61,6 +61,7 @@ func download(cmd *cobra.Command, args []string) {
 			return
 		}
 		downloads := make(chan struct{}, paiallel)
+		defer close(downloads)
 		for _, url := range urls {
 			go func(url string) {
 				logging.LOG.Infof("Download file from %s\n", url)
