@@ -7,6 +7,7 @@ import (
 	"github.com/luoyancn/dubhe/grpclib"
 	grpconfig "github.com/luoyancn/dubhe/grpclib/config"
 	"github.com/luoyancn/dubhe/logging"
+	logconfig "github.com/luoyancn/dubhe/logging/config"
 	"github.com/luoyancn/dubhe/registry/etcdv3"
 	etcdconfig "github.com/luoyancn/dubhe/registry/etcdv3/config"
 	"github.com/luoyancn/fake/mail"
@@ -17,8 +18,9 @@ func main() {
 
 	grpcfg := grpconfig.NewGrpConf()
 	etcdcfg := etcdconfig.NewEtcdConf()
+	logcfg := logconfig.NewDefConf()
 	common.ReadConfig("ssl.toml", "test", logging.STD_ENABLED,
-		"", true, true, grpcfg, etcdcfg)
+		"", true, true, grpcfg, etcdcfg, logcfg)
 	entity := grpclib.NewServiceDescKV(
 		&msg.Service{HostName: os.Getenv("HOSTNAME"), ListenPort: grpconfig.GRPC_PORT},
 		msg.Messages_serviceDesc)

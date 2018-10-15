@@ -3,3 +3,4 @@ bin/
 pkg/
 src/vendor/*
 !src/vendor/vendor.json
+src/github.com/intel/
