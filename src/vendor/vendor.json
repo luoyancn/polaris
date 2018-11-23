@@ -27,6 +27,12 @@
 			"revisionTime": "2018-01-08T23:06:52Z"
 		},
 		{
+			"checksumSHA1": "OgyBo5gCFwVtTIOO8zJ08QABa6k=",
+			"path": "github.com/ebuchman/go-shell-pipes",
+			"revision": "83e1324808622485314bff0fd97b8b944200a7a4",
+			"revisionTime": "2015-04-12T07:04:54Z"
+		},
+		{
 			"checksumSHA1": "7NP1qUMF8Kx1y0zANxx0e+oq9Oo=",
 			"path": "github.com/fsnotify/fsnotify",
 			"revision": "ccc981bf80385c528a65fbfdd49bf2d8da22aa23",
