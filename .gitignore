@@ -1,5 +1,5 @@
 .cache/
 bin/
 pkg/
-!src/vender/*/pkg
+!src/vendor/**/pkg
 src/github.com/intel/
