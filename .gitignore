@@ -3,3 +3,4 @@ bin/
 pkg/
 !src/vendor/**/pkg
 src/github.com/intel/
+src/github.com/luoyancn/chatbox

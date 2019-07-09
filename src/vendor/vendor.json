@@ -171,6 +171,12 @@
 			"revisionTime": "2018-09-14T01:48:43Z"
 		},
 		{
+			"checksumSHA1": "z1hCg0AItrLBb53PGNIUtcQWd/Y=",
+			"path": "github.com/json-iterator/go/extra",
+			"revision": "27518f6661eba504be5a7a9a9f6d9460d892ade3",
+			"revisionTime": "2019-06-21T16:12:01Z"
+		},
+		{
 			"checksumSHA1": "AYZGozgchqe4WcKH/jCZI1flnP8=",
 			"path": "github.com/magiconair/properties",
 			"revision": "c2353362d570a7bfa228149c62842019201cfb71",
